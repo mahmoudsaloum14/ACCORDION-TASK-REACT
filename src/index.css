@@ -1,0 +1,128 @@
+/* ══════════════════════════════════════════
+   Global Styles – Arabic RTL Playground
+══════════════════════════════════════════ */
+
+/* ── Design tokens ── */
+:root {
+  --color-bg:          #f8f9fb;
+  --color-surface:     #ffffff;
+  --color-border:      #e5e7eb;
+  --color-heading:     #1a1a2e;
+  --color-body:        #374151;
+  --color-muted:       #6b7280;
+  --color-accent:      #16a34a;
+  --color-hover-bg:    #f3f4f6;
+  --color-focus:       #16a34a;
+  --color-disabled-bg: #f9fafb;
+  --color-code-bg:     #1e2030;
+  --color-code-text:   #cdd6f4;
+
+  /* Typography */
+  --font-arabic: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+
+  /* Spacing */
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  14px;
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Document: Arabic + RTL ── */
+html {
+  direction: rtl;
+  lang: ar;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-arabic);
+  background-color: var(--color-bg);
+  color: var(--color-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Base elements ── */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading);
+  line-height: 1.3;
+}
+
+p {
+  line-height: 1.7;
+}
+
+button {
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* Visible focus for keyboard nav */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Remove default focus ring for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Scrollbar (webkit) ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* ── Utility ── */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
